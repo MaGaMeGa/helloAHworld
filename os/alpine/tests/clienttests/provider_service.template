@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+start_file="/home/ah/tests/clienttests/server"
+
+command="${start_file}"
+command_user="root"
+command_background='true'
+
+depend(){
+	need ah_orch_service 
+}
+
+start_stop_deamon_args="
+	--quiet
+	--user 'root'
+	--chdir $(dirname "jar_file")
+"
+
+pidfile="run/$RC_SVCNAME.pid"
+retry='TERM/20/KILL/5'

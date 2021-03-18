@@ -1,0 +1,19 @@
+{
+  "interfaces": [
+    "string"
+  ],
+  "metadata": {
+    "additionalProp1": "string",
+    "additionalProp2": "string"
+  },
+  "providerSystem": {
+    "address": "127.0.0.1",
+    "authenticationInfo": "string",
+    "port": 92345,
+    "systemName": "string"
+  },
+  "secure": "string",
+  "serviceDefinition": "string",
+  "serviceUri": "string",
+  "version": 0
+}

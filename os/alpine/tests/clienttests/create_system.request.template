@@ -1,0 +1,6 @@
+{
+  "address": "127.0.0.1",
+  "authenticationInfo": "string",
+  "port": 12345,
+  "systemName": "string"
+}

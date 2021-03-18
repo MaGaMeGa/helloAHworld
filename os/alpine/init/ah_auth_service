@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+jar_file="/home/ah/core/authorization/arrowhead-authorization-4.3.0.jar"
+log4j_file="/home/ah/core/authorization/log4j2.xml"
+
+command="java"
+command_args="	-Xms64M
+		-Xmx128M
+		-Dlog4j.configurationFile=${log4j_file}
+		-jar ${jar_file}
+"
+command_user="root"
+command_background='true'
+
+depend(){
+
+	need ah_sr_service
+
+}
+
+start_stop_deamon_args="
+	--quiet
+	--user 'root'
+	--chdir $(dirname "jar_file")
+"
+
+pidfile="run/$RC_SVCNAME.pid"
+retry='TERM/20/KILL/5'
+

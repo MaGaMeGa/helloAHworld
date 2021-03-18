@@ -1,0 +1,6 @@
+#!/bin/ash
+
+echo started to start core systems
+rc -s ah_sr_service start
+rc -s ah_auth_service start
+rc -s ah_orch_service start
