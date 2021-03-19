@@ -1,6 +1,0 @@
-{
-  "address": "127.0.0.1",
-  "authenticationInfo": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsOyP0S5S5HjlpYPk7kgbnmSLz+EK/yEGCnd9I7//WagduvV1HADIu8V1d0KH8k2KgV32flym6Jf5g7nok5/jqG5bB6LgMbXzjKkxde1uk431iYKdk005EOJRJeRrQKPEelF1mkE62Z9kGEmIkevvUY7mvt22XDEveOJz6LjF5TskCAqUJFvmHy2RJ0OQwUxUuaS3NahwLmiocLeXrTKfRJ3KU7hOJe6pzW3ppnTxtr/d9sbiLvjz61Ici3/ZfoboeXSluYmuJEYIVAqe0DxQvhF5CmffmaOYQDsxj/x0WtE62d3ugeAA955UaoAINnHcEoiapx87hSuGvi3rQHoNSwIDAQAB",
-  "port": 8888,
-  "systemName": "alpine1consumer"
-}
