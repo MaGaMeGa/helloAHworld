@@ -1,11 +1,14 @@
 #!/bin/sh
-./create_test_client_cert.sh testclient
-./curl_create_system.sh
-./create_service.sh
-./create_auth_rule.sh
-#edit service ...
-#rc-update add .._service
-#start provider service ... rc -s ...
-./start_orchestration.sh
-./consume_service.sh
-#cat service...response  
+
+## INIT - DIFINE CLIENT SYSTEM NAMES
+CONSUMER_SYSTEM_NAME="alpine1consumer"
+PROVIDER_SYSTEM_NAME="alpine1provider"
+
+## STEP 0 --- initialize directories
+mkdir $CONSUMER_SYSTEM_NAME
+mkdir $PROVIDER_SYSTEM_NAME
+
+## STEP 1 --- REQUEST A CERTIFICATE FOR THE CONSUMER SYSTEM
+$PWD/requestCertificate.sh $CONSUMER_SYSTEM_NAME  
+
+
