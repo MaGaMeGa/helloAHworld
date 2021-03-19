@@ -12,7 +12,7 @@ AH_PASS_CERT="123456"
 
 SYSTEM_NAME="${1}"
 SYSTEM_PASS="123456"
-HOST_NAME="localhsot"
+HOST_NAME="localhost"
 IP_ADDRESS="127.0.0.1"
 CLOUD_NAME="testcloud2"
 CLOUD_ALIAS="testcloud2.aitia.arrowhead.eu"
