@@ -1,7 +1,9 @@
 #!/bin/sh
 
-#openssl pkcs12 -nocerts -out alpine1provider-key.pem -in alpine1provider.p12
-#openssl pkcs12 -clcerts -nokeys -out alpine1provider.pem -in alpine1provider.p12
+SYSTEM_NAME="..."
 
-cd /home/ah/tests/clienttests/alpine1provider
-openssl s_server -key /home/ah/tests/clienttests/alpine1provider-key.pem -pass pass:123456 -cert  /home/ah/tests/clienttests/alpine1provider.pem -accept 9998 -WWW -msg -Verify 2 > server.log
+openssl pkcs12 -nocerts -out $SYSTEM_NAME-key.pem -in $SYSTEM_NAME.p12
+openssl pkcs12 -clcerts -nokeys -out $SYSTEM_NAME.pem -in .$SYSTEM_NAME.p12
+
+cd /home/ah/tests/clienttests/$SYSTEM_NAME
+openssl s_server -key /home/ah/tests/clienttests/$SYSTEM_NAME-key.pem -pass pass:123456 -cert  /home/ah/tests/clienttests/$SYSTEM_NAME.pem -accept 9998 -WWW -msg -Verify 2 > server.log

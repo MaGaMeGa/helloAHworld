@@ -1,8 +1,12 @@
 #!/bin/sh
 
-## INIT - DEFINE CLIENT SYSTEM NAMES
+## INIT 
+## INIT --- 1 ---  DEFINE CLIENT SYSTEM NAMES
 CONSUMER_SYSTEM_NAME="alpine1consumer"
 PROVIDER_SYSTEM_NAME="alpine1provider"
+
+## INIT --- 2 ---  DEFINE PROVIDED SERVICE NAME
+PROVIDED_SERVICE="helloworld"
 
 ## STEP 0 --- INITIALIZE DIRECTORIES
 mkdir $CONSUMER_SYSTEM_NAME
@@ -26,4 +30,14 @@ cd ../
 $PWD/clienttools/requestCertificate.sh $PROVIDER_SYSTEM_NAME  
 
 ## STEP 4 --- REGISTER SERVICE / AND PROVIDER SYSTEM
+cp $PWD/clienttools/register_service.sh $PWD/$PROVIDER_SYSTEM_NAME  
+cp $PWD/clienttools/start_service.sh $PWD/$PROVIDER_SYSTEM_NAME  
+cp $PWD/templates/register_service.request.template $PWD/$PROVIDER_SYSTEM_NAME  
+cp $PWD/templates/server.template $PWD/$PROVIDER_SYSTEM_NAME  
+cp $PWD/templates/provider.service.template $PWD/$PROVIDER_SYSTEM_NAME  
+cp $PWD/templates/helloworld.content.template $PWD/$PROVIDER_SYSTEM_NAME  
+
+cd $PWD/$PROVIDER_SYSTEM_NAME  
+$PWD/start_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
+$PWD/register_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
 
