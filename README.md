@@ -20,7 +20,8 @@ Running the scripts will trigger the following actions:
 
 How to run the scripts:
 (at the moment only for Linux Alpine OS)
-- startup a fresh Alpine instance
+- startup a fresh openrc enabled Alpine instance in VirtualBox
+- run setup alpine
 - check /etc/apk/repositories and if not in there add : ``` #http://dl-cdn.alpinelinux.org/alpine/edge/community ```
 - check if git is working and if not type: ```apk add git ```
 - go to /tmp and type : ``` cd /tmp && git clone https://github.com/MaGaMeGa/helloAHworld ```
