@@ -10,7 +10,7 @@ cp ../$PROVIDER_SYSTEM_NAME/register_${PROVIDERS_SERVICE_NAME}_service.response 
 chmod 777  $PWD/create_system.response
 chmod 777 $PWD/register_service.response
 
-providerId="$(jq '.provider.id' register_service.response)" $PWD/register_service.response
+providerId="$(jq '.provider.id' register_service.response)"
 
 serviceDefinitionId="$(jq '.serviceDefinition.id' register_service.response)"
 serviceInterfaceId="$(jq '.interfaces | .[0].id' register_service.response)"
