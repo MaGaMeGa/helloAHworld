@@ -40,4 +40,23 @@ cp $PWD/templates/helloworld.content.template $PWD/$PROVIDER_SYSTEM_NAME
 cd $PWD/$PROVIDER_SYSTEM_NAME  
 $PWD/start_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
 $PWD/register_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
+cd ../
 
+## CREATE AUTHORIZATION POLICY
+cd ./managementtool
+$PWD/create_auth_policy.sh "${CONSUMER_SYSTEM_NAME}" "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
+cd ../
+
+## AS CONSUMER -- QUERY SERVCIE_REGISTRY FOR ORCHESTRATION SERVICE
+
+cp $PWD/clienttools/query_serviceregistry.sh $PWD/$CONSUMER_SYSTEM_NAME
+cp $PWD/templates/sr_entry.request.template $PWD/$CONSUMER_SYSTEM_NAME
+
+cd $PWD/$CONSUMER_SYSTEM_NAME
+
+$PWD/query_serviceregistry.sh "${CONSUMER_SYSTEM_NAME}" "orchestration-service"
+$PWD/start_orchestration.sh "${CONSUMER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
+
+$PWD/consume_service.sh
+
+cat $PWD/$PROVIDED_SERVICE

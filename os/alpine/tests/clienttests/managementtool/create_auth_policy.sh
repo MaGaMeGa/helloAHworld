@@ -1,9 +1,17 @@
 #!/bin/sh
 
+CONSUMER_SYSTEM_NAME="${1}"
+PROVIDER_SYSTEM_NAME="${2}"
+PROVIDERS_SERVICE_NAME="${3}"
 
-providerId="$(jq '.provider.id' register_service.response)"
+cp ../$CONSUMER_SYSTEM_NAME/create_system.response $PWD/create_system.response
+cp ../$PROVIDER_SYSTEM_NAME/register_${PROVIDERS_SERVICE_NAME}_service.response $PWD/register_service.response
 
-#serviceDefinition="$(jq '.serviceDefinition.id' register_service.response)"
+chmod 777  $PWD/create_system.response
+chmod 777 $PWD/register_service.response
+
+providerId="$(jq '.provider.id' register_service.response)" $PWD/register_service.response
+
 serviceDefinitionId="$(jq '.serviceDefinition.id' register_service.response)"
 serviceInterfaceId="$(jq '.interfaces | .[0].id' register_service.response)"
 consumerId="$(jq '.id' create_system.response)"
