@@ -1,9 +1,8 @@
 #!/bin/sh
 
 SYSTEM_NAME="..."
+SYSTEM_PORT=...
 
-openssl pkcs12 -nocerts -out $SYSTEM_NAME-key.pem -in $SYSTEM_NAME.p12
-openssl pkcs12 -clcerts -nokeys -out $SYSTEM_NAME.pem -in .$SYSTEM_NAME.p12
-
-cd /home/ah/tests/clienttests/$SYSTEM_NAME
 openssl s_server -key /home/ah/tests/clienttests/$SYSTEM_NAME-key.pem -pass pass:123456 -cert  /home/ah/tests/clienttests/$SYSTEM_NAME.pem -accept 9998 -WWW -msg -Verify 2 > server.log
+
+openssl s_server -key "${SYSTEM_NAME}-key.pem" -pass pass:123456 -cert  "${SYSTEM_NAME}.pem" -accept $SYSTEM_PORT -WWW -msg -Verify 2 > server.log

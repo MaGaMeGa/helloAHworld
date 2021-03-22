@@ -2,10 +2,13 @@
 
 ## INIT 
 ## INIT --- 1 ---  DEFINE CLIENT SYSTEM NAMES
-CONSUMER_SYSTEM_NAME="alpine1consumer"
-PROVIDER_SYSTEM_NAME="alpine1provider"
+
+CONSUMER_SYSTEM_NAME="alpine7consumer"
+PROVIDER_SYSTEM_NAME="alpine7provider"
+PROVIDER_SYSTEM_PORT=9968
 
 ## INIT --- 2 ---  DEFINE PROVIDED SERVICE NAME
+
 PROVIDED_SERVICE="helloworld"
 
 ## STEP 0 --- INITIALIZE DIRECTORIES
@@ -38,11 +41,13 @@ cp $PWD/templates/provider.service.template $PWD/$PROVIDER_SYSTEM_NAME
 cp $PWD/templates/helloworld.content.template $PWD/$PROVIDER_SYSTEM_NAME  
 
 cd $PWD/$PROVIDER_SYSTEM_NAME  
-$PWD/start_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
-$PWD/register_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
+$PWD/start_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"  $PROVIDER_SYSTEM_PORT
+$PWD/register_service.sh "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}" $PROVIDER_SYSTEM_PORT
 cd ../
 
 ## CREATE AUTHORIZATION POLICY
+cp $PWD/templates/intra_auth.request.template $PWD/managementtool/
+
 cd ./managementtool
 $PWD/create_auth_policy.sh "${CONSUMER_SYSTEM_NAME}" "${PROVIDER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
 cd ../
@@ -52,11 +57,16 @@ cd ../
 cp $PWD/clienttools/query_serviceregistry.sh $PWD/$CONSUMER_SYSTEM_NAME
 cp $PWD/templates/sr_entry.request.template $PWD/$CONSUMER_SYSTEM_NAME
 
+cp $PWD/templates/orchestration.request.template $PWD/$CONSUMER_SYSTEM_NAME
+cp $PWD/clienttools/start_orchestration.sh $PWD/$CONSUMER_SYSTEM_NAME
+
+cp $PWD/clienttools/consume_service.sh $PWD/$CONSUMER_SYSTEM_NAME
+
 cd $PWD/$CONSUMER_SYSTEM_NAME
 
 $PWD/query_serviceregistry.sh "${CONSUMER_SYSTEM_NAME}" "orchestration-service"
 $PWD/start_orchestration.sh "${CONSUMER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
 
-$PWD/consume_service.sh
+$PWD/consume_service.sh "${CONSUMER_SYSTEM_NAME}"
 
 cat $PWD/$PROVIDED_SERVICE

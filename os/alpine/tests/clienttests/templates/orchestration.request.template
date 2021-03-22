@@ -20,7 +20,7 @@
     "onlyPreferred" : false,
     "overrideStore" : true,
     "externalServiceRequest" : false,
-    "enableInterCloud" : true,
+    "enableInterCloud" : false,
     "enableQoS" : false,
     "matchmaking" : true,
     "metadataSearch" : false,
