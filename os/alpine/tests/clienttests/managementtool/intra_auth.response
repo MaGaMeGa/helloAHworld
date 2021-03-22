@@ -1,1 +1,0 @@
-{"errorMessage":"Payload is invalid due to the following reasons: providerId list is empty","errorCode":400,"exceptionType":"BAD_PAYLOAD","origin":"/authorization/mgmt/intracloud"}
