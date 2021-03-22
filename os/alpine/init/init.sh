@@ -11,7 +11,7 @@ sed -i 's$#http://dl-cdn.alpinelinux.org/alpine/edge/community$http://dl-cdn.alp
 cat  /etc/apk/repositories
 apk update && upgrade
 
-apk add vim git curl openjdk11 maven mariadb mariadb-common mariadb-client
+apk add vim git curl jq openjdk11 maven mariadb mariadb-common mariadb-client
 
 rc -s mariadb stop
 /etc/init.d/mariadb setup
@@ -30,6 +30,7 @@ cd /tmp
 git clone http://github.com/eclipse-arrowhead/core-java-spring
 
 cd /tmp/core-java-spring/scripts
+echo "Type your database root password, when propted."
 mysql -u root -p < create_empty_arrowhead_db.sql
 
 rm /tmp/core-java-spring/pom.xml
@@ -71,3 +72,5 @@ cp /home/ah/init/ah_* /etc/init.d/
 rc-update add ah_sr_service
 rc-update add ah_auth_service
 rc-update add ah_orch_service
+
+
