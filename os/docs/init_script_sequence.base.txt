@@ -1,0 +1,29 @@
+object Init_script Package_manager Text_editor_sed Rc_service_runner MySql_MariaDB  Git Maven Copy_files_cp
+Init_script->Init_script: Create directories for installation
+Init_script->Text_editor_sed: Uncomment edge repository
+Text_editor_sed->Init_script: Ready
+Init_script->Package_manager: Install dependency packages
+Package_manager->Init_script: Ready
+Init_script->Rc_service_runner: Stop mariaDB (if running)
+Rc_service_runner->Init_script: Ready
+Init_script->Init_script:Start mariaDB setup
+Init_script->Text_editor_sed: Edit mariaDB configuration
+Text_editor_sed->Init_script: Ready
+Init_script->Rc_service_runner: Start mariaDB
+Rc_service_runner->Init_script: Ready
+Init_script->MySql_MariaDB: Run setdbrootpass.sql
+MySql_MariaDB->Init_script: Ready
+Init_script->Init_script: Run mysql_secure_installation
+Init_script->Git: Clone Arrohead core systems codebase
+Git->Init_script: Ready
+Init_script->MySql_MariaDB: Run create_empty_arrowhead_db.sql
+MySql_MariaDB->Init_script: Ready
+Init_script->Maven: Run clean install
+Maven->Init_script: Ready
+Init_script->Init_script: Create directories for core systems
+Init_script->Copy_files_cp: Copy jars, log4j2.xmls and .properites files
+Copy_files_cp->Init_script: Ready
+Init_script->Text_editor_sed: Edit log4j2.xmls
+Text_editor_sed->Init_script: Ready
+Init_script->Rc_service_runner: Add core systems to services
+Rc_service_runner->Init_script: Ready

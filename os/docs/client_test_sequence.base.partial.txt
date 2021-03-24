@@ -1,0 +1,32 @@
+object testscript clienttools cert_auth managertools consumer provider templates sr auth orch
+testscript->testscript: Initalize properties
+testscript->clienttools : call request_certificate.sh 
+note left of testscript: called with param \n - consumer systemname 
+clienttools->cert_auth: call create_test_client_cert.sh
+note left of clienttools: called with param \n - consumer systemname
+cert_auth->cert_auth: create cert, pub and  auth_info
+cert_auth->consumer: copy created files to consumer
+cert_auth->clienttools: create_test_client_cert.sh ready
+clienttools->testscript: request_certificate.sh ready
+testscript->consumer: get consumers auth_info
+consumer->testscript: return consumers auth_info
+testscript->managertools: call register_system.sh
+note left of testscript: called with params \n - consumer systemname \n - consumer auth_info
+managertools->templates: get create_system.request.template
+templates->managertools: return create_system.request.template
+managertools->managertools: create  create_system.request from create_system.request.template
+managertools->sr: send  create_system.request
+sr->managertools: return create_system.response
+managertools->consumer: copy  create_system.response to consumer
+managertools->testscript: register_system.sh ready
+testscript->clienttools : call request_certificate.sh 
+note left of testscript: called with param \n - provider systemname 
+clienttools->cert_auth: call create_test_client_cert.sh
+note left of clienttools: called with param \n - provider systemname
+cert_auth->cert_auth: create cert, pub and  auth_info
+cert_auth->provider: copy created files to provider
+cert_auth->clienttools: create_test_client_cert.sh ready
+clienttools->testscript: request_certificate.sh ready
+
+
+

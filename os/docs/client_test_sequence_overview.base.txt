@@ -1,0 +1,19 @@
+object consumer provider support_systems serviceregistry authorization orchestrator
+consumer->support_systems: crate certificate request
+support_systems->consumer: crate certificate response
+consumer->support_systems: crate system request
+support_systems->serviceregistry: crate system request
+serviceregistry->support_systems: crate system response
+support_systems->consumer: crate system response
+provider->support_systems: crate certificate request
+support_systems->provider: crate certificate response
+provider->serviceregistry: crate system and helloworld service request
+serviceregistry->provider: crate system and helloworld service response
+support_systems->authorization: create authorization policy request
+authorization->support_systems: create authorization policy response
+consumer->serviceregistry: query orchestration service details
+serviceregistry->consumer: query orchestration service details response
+consumer->orchestrator: query helloworld service
+orchestrator->consumer: query helloworld service response
+consumer->provider: consume helloworld service
+provider->consumer: helloworld service response
