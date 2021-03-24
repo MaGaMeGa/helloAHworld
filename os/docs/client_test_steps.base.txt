@@ -1,0 +1,7 @@
+object step1 step2 step3 step4 step5 step6 step7
+step1->step2: consumer system registration
+step2->step3: provider system and service registration
+step3->step4: authorization policy registration
+step4->step5: identifying the orchestation service and orchestator system
+step5->step6: identifying the helloworld service and the provider system
+step6->step7: consuming the helloworld service
