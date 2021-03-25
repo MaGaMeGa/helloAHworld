@@ -8,14 +8,13 @@ check free disc space
 	if free disc space < 8G : this version of the helloAHworld need at least 8G space
 
 check RAM
-	win
-	macos
-	linux
+	win - start PowerShell as admin and type: Get-WmiObject Win32_PhysicalMemory | Select-Object Capacity
+	macos - open terminal and type: system_profiler SPHardwareDataType | grep "  Memory:"
+	linux - open terminal and type: free -h
 
 	if RAM  < 4G : this version of the helloAHworld need at least 4G RAM
 
 check virtualBox
-
 	win
 	macos
 	linux
