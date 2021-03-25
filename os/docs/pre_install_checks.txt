@@ -20,7 +20,7 @@ install virtualBox
 	linux
 
 download alpine_for_virtualBox iso
-	win - curl -o alpine-3.13.2-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-virt-3.13.2-x86_64.iso
+	win - md C:Virtulabox && curl -o alpine-3.13.2-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-virt-3.13.2-x86_64.iso
 	macos -
 	linux -
 
