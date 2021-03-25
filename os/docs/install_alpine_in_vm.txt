@@ -1,0 +1,25 @@
+
+#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
+# after login as user "root" (passwordless)
+
+# run setup
+$ setup-alpine
+
+>>>
+keyboard layout: "us"
+keyboard variant: "us"
+system hostname: "localhost"
+initialise interface: "eth0, dhcp, no manual setup"
+enter root password
+timezone: "UTC"
+HTTP/FTP proxy URL: "none"
+Detect and add fastest mirror: "f"
+SSH server: "openssh"
+NTP client: "chrony"
+install to disk: "sda"
+install type: "sys"
+erase & continue: "y"
+<<<
+
+# shutdown system
+$ poweroff
