@@ -69,4 +69,4 @@ $PWD/start_orchestration.sh "${CONSUMER_SYSTEM_NAME}" "${PROVIDED_SERVICE}"
 
 $PWD/consume_service.sh "${CONSUMER_SYSTEM_NAME}"
 
-cat $PWD/$PROVIDED_SERVICE
+cat $PWD/"${PROVIDED_SERVICE}.response"
