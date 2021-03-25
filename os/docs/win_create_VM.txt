@@ -1,0 +1,62 @@
+Add VirtualBox installation dir to PATH
+
+
+Open PowerShell and type:
+
+md C:\VirtualBox
+cd C:\VirtualBox
+md AlpineVM
+VBoxManage createhd --filename ./AlpineVM/AlpineVM.vdi --size 8192
+
+
+#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
+
+###  TODO TRANSLATE FROM SHELL TO WIN SCRIPT !!!
+ 
+Create Alpine Linux VM with VirtualBox
+
+Today a tutorial for creating a Alpine Linux VM with VirtualBox. The only limitation is that VirtualBox is already installed. Furthermore,  all of the steps are performed in the terminal (without VirtualBox-GUI).
+
+Creation of VM
+
+# change directory
+$ cd VirtualBox\ VMs/
+
+# download alpine iso
+$ curl -o alpine-3.4.3-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.4/releases/x86_64/alpine-3.4.3-x86_64.iso
+
+# checksum sha1 (optional)
+$ openssl sha1 alpine-3.4.3-x86_64.iso
+
+# create new directory
+$ mkdir AlpineVM
+
+# create storage medium for VM
+$ VBoxManage createhd --filename ./AlpineVM/AlpineVM.vdi --size 8192
+
+# list available OS types (just for fun and good to know)
+$ VBoxManage list ostypes
+
+# register new alpine VM
+$ VBoxManage createvm --name "AlpineVM" --ostype Linux26_64 --register
+
+# configure system settings of alpine VM
+$ VBoxManage modifyvm "AlpineVM" --memory 1024 --cpus 1 --acpi on --pae off --hwvirtex on --nestedpaging on --rtcuseutc on --vram 16 --audio none --accelerate3d off --accelerate2dvideo off --usb on
+
+# configure boot settings of VM
+$ VBoxManage modifyvm "AlpineVM" --boot1 dvd --boot2 disk --boot3 none --boot4 none
+
+# modify a storage controller (IDE)
+$ VBoxManage storagectl "AlpineVM" --name "IDE" --add ide
+
+# modify a storage controller (SATA)
+$ VBoxManage storagectl "AlpineVM" --name "SATA" --add sata
+
+# add storage medium to VM
+$ VBoxManage storageattach "AlpineVM" --storagectl "SATA" --port 0 --device 0 --type hdd --medium ./AlpineVM/AlpineVM.vdi
+
+# add alpine iso
+$ VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium alpine-3.4.3-x86_64.iso
+
+# start alpine VM
+$ VBoxManage startvm "AlpineVM"
