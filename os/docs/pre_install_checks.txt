@@ -1,0 +1,31 @@
+installation checklist
+
+check free disc space 
+	win
+	macos
+	linux
+
+	if free disc space < 8G : this version of the helloAHworld need at least 8G space
+
+check RAM
+	win
+	macos
+	linux
+
+	if RAM  < 4G : this version of the helloAHworld need at least 4G RAM
+
+check virtualBox
+
+	win
+	macos
+	linux
+
+	if virtualBox not installed
+		install virtualBox
+			win
+			macos
+			linux
+
+download alpine_for_virtualBox iso
+
+create new alpine machine in virtualbox
