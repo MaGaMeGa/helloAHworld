@@ -1,0 +1,11 @@
+MariaDB secure installation user intraction questions and suggested answers.
+
+>>>
+Enter current password for root: "123456"
+Switch to unix_socket authentication [Y/n]: "n"
+Change the root password? [Y/n]: "Y"
+Remove anonymus users? [Y/n]: "Y"
+Disallow root login remotely? [Y/n]: "Y"
+Remove test database and access to it? [Y/n]: "Y"
+Reload privileges tables now? [Y/n]: "Y"
+<<<
