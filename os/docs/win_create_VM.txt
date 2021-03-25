@@ -14,7 +14,7 @@ VBoxManage modifyvm "AlpineVM" --boot1 dvd --boot2 disk --boot3 none --boot4 non
 VBoxManage storagectl "AlpineVM" --name "IDE" --add ide
 VBoxManage storagectl "AlpineVM" --name "SATA" --add sata
 VBoxManage storageattach "AlpineVM" --storagectl "SATA" --port 0 --device 0 --type hdd --medium ./AlpineVM/AlpineVM.vdi
-VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium alpine-3.4.3-x86_64.iso
+VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium alpine-3.13.2-x86_64.iso
 VBoxManage startvm "AlpineVM"
 
 ### Tested and working on Windows 10 Home on phisical environment
