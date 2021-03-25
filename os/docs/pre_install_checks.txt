@@ -1,9 +1,9 @@
 installation checklist
 
 check free disc space 
-	win
-	macos
-	linux
+	win - start PowerShell as admin and type: Get-PSDrive 
+	macos - open terminal and type: df -H
+	linux - open terminal and type: df -H
 
 	if free disc space < 8G : this version of the helloAHworld need at least 8G space
 
