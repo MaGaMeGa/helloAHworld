@@ -7,6 +7,8 @@ md C:\VirtualBox
 cd C:\VirtualBox
 md AlpineVM
 VBoxManage createhd --filename ./AlpineVM/AlpineVM.vdi --size 8192
+VBoxManage createvm --name "AlpineVM" --ostype Linux26_64 --register
+VBoxManage modifyvm "AlpineVM" --memory 1024 --cpus 1 --acpi on --pae off --hwvirtex on --nestedpaging on --rtcuseutc on --vram 16 --audio none --accelerate3d off --accelerate2dvideo off --usb off
 
 
 #### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
