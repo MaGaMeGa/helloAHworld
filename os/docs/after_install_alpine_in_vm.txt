@@ -1,5 +1,5 @@
-# remove alpine iso
-$ VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium emptydrive
+#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
 
-# start VM
-$ VBoxManage startvm "AlpineVM"
+
+VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium emptydrive
+VBoxManage startvm "AlpineVM"
