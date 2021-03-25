@@ -1,7 +1,8 @@
 Add VirtualBox installation dir to PATH
 
-#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
 Open PowerShell and type:
+
+#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
 
 md C:\VirtualBox
 cd C:\VirtualBox
