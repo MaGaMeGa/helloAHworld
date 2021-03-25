@@ -1,0 +1,5 @@
+# remove alpine iso
+$ VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium emptydrive
+
+# start VM
+$ VBoxManage startvm "AlpineVM"
