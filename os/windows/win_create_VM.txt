@@ -7,6 +7,9 @@ Open PowerShell and type:
 md VirtualBox
 cd .\VirtualBox
 md AlpineVM
+
+curl -o alpine-3.13.2-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-virt-3.13.2-x86_64.iso
+
 VBoxManage createhd --filename ./AlpineVM/AlpineVM.vdi --size 8192
 VBoxManage createvm --name "AlpineVM" --ostype Linux26_64 --register
 VBoxManage modifyvm "AlpineVM" --memory 1024 --cpus 1 --acpi on --pae off --hwvirtex on --nestedpaging on --rtcuseutc on --vram 16 --audio none --accelerate3d off --accelerate2dvideo off --usb off
