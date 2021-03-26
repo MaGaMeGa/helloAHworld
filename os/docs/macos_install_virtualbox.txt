@@ -1,0 +1,7 @@
+### homebrew must be allready installed as in: macos_install_homebrew.txt
+
+#Open Terminal and type:
+brew install virtualbox
+
+# test installation
+VboxManage -v 
