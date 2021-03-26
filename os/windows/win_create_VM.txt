@@ -4,8 +4,8 @@ Open PowerShell and type:
 
 #### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
 
-md C:\VirtualBox
-cd C:\VirtualBox
+md VirtualBox
+cd .\VirtualBox
 md AlpineVM
 VBoxManage createhd --filename ./AlpineVM/AlpineVM.vdi --size 8192
 VBoxManage createvm --name "AlpineVM" --ostype Linux26_64 --register
@@ -18,4 +18,4 @@ VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --typ
 VBoxManage startvm "AlpineVM"
 
 ### Tested and working on Windows 10 Home on phisical environment
-### Tested and run into issues in MSEdge on Win10 (x64) Stable 1809 in VirtulBox  
+### Tested and run into issues in MSEdge on Win10 (x64) Stable 1809 as virtual machine 
