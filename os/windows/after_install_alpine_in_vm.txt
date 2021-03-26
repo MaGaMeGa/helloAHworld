@@ -1,0 +1,5 @@
+#### As in : https://softwaretester.info/create-alpine-linux-vm-with-virtualbox/ ### 
+
+
+VBoxManage storageattach "AlpineVM" --storagectl "IDE" --port 1 --device 0 --type dvddrive --medium emptydrive
+VBoxManage startvm "AlpineVM"

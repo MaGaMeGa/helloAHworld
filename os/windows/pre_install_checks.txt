@@ -1,0 +1,27 @@
+installation checklist
+
+check free disc space 
+	win - start PowerShell as admin and type: Get-PSDrive 
+	macos - open terminal and type: df -H
+	linux - open terminal and type: df -H
+
+	if free disc space < 8G : this version of the helloAHworld need at least 8G space
+
+check RAM
+	win - start PowerShell as admin and type: Get-WmiObject Win32_PhysicalMemory | Select-Object Capacity
+	macos - open terminal and type: system_profiler SPHardwareDataType | grep "  Memory:"
+	linux - open terminal and type: free -h
+
+	if RAM  < 4G : this version of the helloAHworld need at least 4G RAM
+
+install virtualBox
+	win - follow instractions in win_install_choco.txt then start PowerShell as admin and type: choco install virtualbox
+	macos- 
+	linux
+
+download alpine_for_virtualBox iso
+	win - md C:Virtulabox && curl -o alpine-3.13.2-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-virt-3.13.2-x86_64.iso
+	macos -
+	linux -
+
+create new alpine machine in virtualbox
