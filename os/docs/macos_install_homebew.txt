@@ -1,7 +1,17 @@
 ### as in: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-homebrew-on-macos
 
-Open Terminal
+#Open Terminal
 
 xcode-select --install
 curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 /bin/bash install.sh
+
+## add PATH to      ~/.bash_profile or ~/.zshrc
+### check link for further info 
+
+#in editor 
+export PATH=/usr/local/bin:$PATH
+
+## test homebrew installation:
+# In Terminal
+brew doctor
