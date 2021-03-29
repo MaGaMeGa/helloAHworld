@@ -12,16 +12,12 @@ check RAM
 	macos - open terminal and type: system_profiler SPHardwareDataType | grep "  Memory:"
 	linux - open terminal and type: free -h
 
-	if RAM  < 4G : this version of the helloAHworld need at least 4G RAM
+	if RAM  < 2G : this version of the helloAHworld need at least 2G RAM
 
 install virtualBox
-	win - follow instractions in win_install_choco.txt then start PowerShell as admin and type: choco install virtualbox
-	macos- 
-	linux
-
-download alpine_for_virtualBox iso
-	win - md C:Virtulabox && curl -o alpine-3.13.2-x86_64.iso http://dl-cdn.alpinelinux.org/alpine/v3.13/releases/x86_64/alpine-virt-3.13.2-x86_64.iso
-	macos -
+	win - follow instractions in win_install_choco.txt then restart PowerShell as admin and type: choco install virtualbox
+		or https://www.wikihow.com/Install-VirtualBox or https://www.virtualbox.org/manual/UserManual.html#installation
+	macos - 
 	linux -
 
-create new alpine machine in virtualbox
+
