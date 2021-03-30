@@ -4,7 +4,7 @@
 SYSTEM_NAME="${1}"
 
 ## USE CERTIFICATE AUTHORITHY NAMESPACE
-cd $PWD/certificateauthorithy/
+cd $PWD/certificateauthority/
 
 ## CREATE CERTIFICATE, PUBLIC KEY, AND NORMALIZED PUBLIC KEY FILES
 $PWD/create_test_client_cert.sh "${SYSTEM_NAME}"
