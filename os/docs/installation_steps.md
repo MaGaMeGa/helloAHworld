@@ -11,11 +11,13 @@
    - Go to the [Download site](https://github.com/MaGaMeGa/helloVM)
    - Pick a download link
    - Download the virtual machine
-4) Import virtual machine <br />
-  In command line type: `vboxmanage import HELLO_AH_WORLD.ova`
-5) Start virtual machine <br />
+4) Optional (but certainly recommended) - check checksum. [HOW TO CHECK CHECKSUM](https://duckduckgo.com/?t=canonical&q=verifiy+download+checksum&ia=web)
+5) Import virtual machine <br />
+  - In the folder where you downloaded the HELLO_AH_WORLD.ova open a comman line/terminal.
+  - In command line/terminal type: `vboxmanage import HELLO_AH_WORLD.ova`
+6) Start virtual machine <br />
   In command line type: `vboxmanage stratvm HELLO_AH_WORLD`
-6) Start using virtual machine <br />
+7) Start using virtual machine <br />
     In the pop up terminal 
     - login : `root`
     - password : default arrowhead password as [in](https://github.com/eclipse-arrowhead/core-java-spring#certificates)
