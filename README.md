@@ -12,11 +12,11 @@ The goal of the project is to demonstarte a simple setup and running a basic sce
    And the consumer know the address and port of the service registry <br />
   - When the consumer system A want to consume the HelloWorld service, <br />
   - Then the cunsumer system A query the service registy for the orchestration service endpoint<br />
-  Then the cunsumer system A receives the orchestration endpoint details <br />
-  Then the cunsumer system A send an orchestration request for the HelloWorld service endpoint to the orchetration endpoint<br />
-  Then the cunsumer system A receives the HelloWorld service endpoint details<br />
-  Then the cunsumer system A send a HelloWorld service request to the HelloWorld service endpoint <br />
-  Then the cunsumer system A receives a HelloWorld service response <br />
+  And the cunsumer system A receives the orchestration endpoint details <br />
+  And the cunsumer system A send an orchestration request for the HelloWorld service endpoint to the orchetration endpoint<br />
+  And the cunsumer system A receives the HelloWorld service endpoint details<br />
+  And the cunsumer system A send a HelloWorld service request to the HelloWorld service endpoint <br />
+  And the cunsumer system A receives a HelloWorld service response <br />
 ***
 ## How to run?
 - Follow the [installation step instructions ](https://github.com/MaGaMeGa/helloAHworld/blob/main/os/docs/installation_steps.md) to set up and start the pre configured environment
