@@ -1,0 +1,11 @@
+#for https://textart.io/sequence && https://github.com/weidagang/text-diagram
+
+object ExecutorScript OperatingSystem 
+ ExecutorScript-> ExecutorScript: define CONSUMER_SYSTEM_NAME
+ note left of ExecutorScript: hard coded in current version
+ ExecutorScript-> ExecutorScript: define PROVIDER_SYSTEM_NAME
+note left of ExecutorScript: hard coded in current version
+ ExecutorScript->OperatingSystem: create consumer working directory named by CONSUMER_SYSTEM_NAME
+ OperatingSystem->ExecutorScript: ready
+ ExecutorScript->OperatingSystem: create provider working directory named by PROVIDER_SYSTEM_NAME
+ OperatingSystem->ExecutorScript: ready
