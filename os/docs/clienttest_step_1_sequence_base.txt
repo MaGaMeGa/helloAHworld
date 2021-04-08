@@ -1,0 +1,27 @@
+#for https://textart.io/sequence && https://github.com/weidagang/text-diagram
+
+object ExecutorScript ClientTools CertificateAuthority Managementtool CreateSystemTemplate ServiceRegistry
+ ExecutorScript-> ClientTools : call requestCertificate script 
+ note right of ExecutorScript: input param: \n  - CONSUMER_SYSTEM_NAME
+ClientTools -> CertificateAuthority: call create_test_client_cert script 
+ note right of ClientTools: input param: \n  - CONSUMER_SYSTEM_NAME
+CertificateAuthority -> CertificateAuthority: call genSystemCert script 
+CertificateAuthority -> CertificateAuthority: creates consumer certificate
+CertificateAuthority -> CertificateAuthority: export consumers public key
+CertificateAuthority -> CertificateAuthority: call normalize_pub script 
+CertificateAuthority -> CertificateAuthority: creates normalized public key
+CertificateAuthority -> ClientTools: ready
+ClientTools -> ClientTools: move created files to consumers working directory
+ExecutorScript ->  ExecutorScript: initalize CONSUMER_AUTHINFO field
+ExecutorScript -> Managementtool: call register_system script
+note right of ExecutorScript: input params: \n  - CONSUMER_SYSTEM_NAME and CONSUMER_AUTHINFO
+Managementtool -> Managementtool: initialize consumer system info fields
+Managementtool -> CreateSystemTemplate: create create_system.request
+note right of Managementtool: input params: \n  -  consumer system info fields
+CreateSystemTemplatel -> Managementtool: return create create_system.request
+Managementtool -> ServiceRegistry: create create_system endpoint
+note right of Managementtool: input params: \n  -  create create_system.request
+ServiceRegistry -> Managementtool: send create_system.response
+Managementtool -> Managementtool: move create_system.response to consumers working directory
+Managementtool -> Managementtool: delete temporal  create_system.request file
+Managementtool -> ExecutorScript: ready
