@@ -19,7 +19,7 @@ The goal of the project is to demonstarte a simple setup and running a basic sce
   And the cunsumer system A receives a HelloWorld service response <br />
 ***
 ## How to run?
-- Follow the [installation step instructions ](https://github.com/MaGaMeGa/helloAHworld/blob/main/os/docs/installation_steps.md) to set up and start the pre configured environment
+- Follow the [installation steps instructions ](https://github.com/MaGaMeGa/helloAHworld/blob/main/os/docs/installation_steps.md) to set up and start the pre configured environment
 - Once the enviroment is up type the following to the terminal and press enter/return : <br /> ```cd /home/ah/tests/clienttests && ./run_client_tests.sh ``` 
 
 ## What is going on?
