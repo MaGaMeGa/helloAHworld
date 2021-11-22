@@ -1,0 +1,9 @@
+[
+	{
+		"address": "127.0.0.1",
+		"port": 61617,
+		"type": "GENERAL_RELAY",
+		"exclusive": false,
+		"secure": true
+	}
+]

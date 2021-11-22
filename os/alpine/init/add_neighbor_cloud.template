@@ -1,0 +1,12 @@
+[
+	{
+		"name": "n_cloud_name",
+		"operator": "aitia",
+		"authenticationInfo": "n_gk_auth_info",
+		"neighbor": true,
+		"secure": true,
+		"gatekeeperRelayIds": [
+			1
+		]
+	}
+]
