@@ -1,27 +1,32 @@
 #!/bin/sh -x
 
-SRC=$1
+SRC=silent_start.sh
 
-TC1_DIR=$(ls /etc/arrowhead/clouds/tc1/conf.d/cores/)
-TC2_DIR=$(ls /etc/arrowhead/clouds/tc2/conf.d/cores/)
+#TC1_DIR=$(ls /etc/arrowhead/clouds/tc1/conf.d/cores/)
+TC1_DIR=$(cat /home/sysop/utils/systems.txt)
+#TC2_DIR=$(ls /etc/arrowhead/clouds/tc2/conf.d/cores/)
+TC2_DIR=$(cat /home/sysop/utils/systems.txt)
 
 for i in $TC1_DIR
  	do
 		if [ -f  /etc/arrowhead/clouds/tc1/conf.d/cores/$i/$SRC ]
 			then
-				 echo $SRC allready present...
-			else
-				cp ./$SRC /etc/arrowhead/clouds/tc1/conf.d/cores/$i/$SRC
+				cd /etc/arrowhead/clouds/tc1/conf.d/cores/$i
+				nohup sh $SRC 1>/dev/null 2>/dev/null &
+				echo starting tc1 - $i ...
+				sleep 10s
 		fi
 	done
 
 
 for i in $TC2_DIR 
 	do
-		if [ -h  /etc/arrowhead/clouds/tc2/conf.d/cores/$i/ah.jar ]
+		if [ -f  /etc/arrowhead/clouds/tc2/conf.d/cores/$i/$SRC ]
 			then
-				 echo $SRC allready present...
-				cp ./$SRC /etc/arrowhead/clouds/tc2/conf.d/cores/$i/$SRC
+				cd /etc/arrowhead/clouds/tc2/conf.d/cores/$i
+				nohup sh $SRC 1>/dev/null 2>/dev/null &
+				echo starting tc2 - $i ...
+				sleep 10s
 		fi
 	done
 
