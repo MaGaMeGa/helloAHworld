@@ -1,0 +1,1 @@
+## sh makerelaycert.sh /tmp/c/master.crt arrowhead.eu /tmp/c/relay-masterx1.p12 relay-masterx1 123456 /tmp/c/ relayxa 123456 192.168.56.1

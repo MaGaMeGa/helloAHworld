@@ -1,0 +1,31 @@
+#!/bin/sh
+
+ROOT_NAME="master"
+ROOT_ALIAS="mgm.org"
+OPERATOR="aidbia"
+CLOUD1_NAME="hello1"
+CLOUD1_ALIAS="${CLOUD1_NAME}.${OPERATOR}"
+CLOUD2_NAME="hello2"
+CLOUD2_ALIAS="${CLOUD2_NAME}.${OPERATOR}"
+RELAY_ROOT_NAME="relayroot"
+RELAY_ROOT_ALIAS="${RELAY_ROOT_NAME}"
+RELAY_NAME="relay1"
+RELAY_ALIAS="${RELAY_NAME}"
+RELAY_TRUSTSTORE_NAME="${RELAY_NAME}.truststore"
+
+CLOUD1_TRUSTSTORE_NAME="${CLOUD1_NAME}.truststore"
+CLOUD1_GATE_TRUSTSTORE_NAME="${CLOUD1_NAME}.gate.truststore"
+
+CLOUD2_TRUSTSTORE_NAME="${CLOUD2_NAME}.truststore"
+CLOUD2_GATE_TRUSTSTORE_NAME="${CLOUD2_NAME}.gate.truststore"
+
+UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 )
+BASEDIR="/tmp/newclouds_${UUID}/"
+
+CLOUD1_KS="${BASEDIR}${CLOUD1_NAME}.p12"
+CLOUD2_KS="${BASEDIR}${CLOUD2_NAME}.p12"
+
+err(){
+
+	echo "[$(date)]: $*" >&2
+}

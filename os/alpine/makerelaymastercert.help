@@ -1,0 +1,1 @@
+## sh makerelaymastercert.sh /tmp/c/master.p12 arrowhead.eu 123456 /tmp/c/relay-masterx1.p12 relay-masterx1 123456

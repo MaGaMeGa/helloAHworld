@@ -1,0 +1,7 @@
+serviceregistry 192.168.56.1
+authorization 192.168.56.1
+orchestrator 192.168.56.1
+eventhandler 192.168.56.1
+gatekeeper 192.168.56.1
+gateway 192.168.56.1
+sysop 192.168.56.1

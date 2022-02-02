@@ -1,0 +1,14 @@
+makesystemcert help:
+
+## param 1 : master cert file path with extention
+## param 2 : master cert alias
+## param 3 : cloud cert file path with extention
+## param 4 : cloud cert alias !!! check the certificate to validate !!!
+## param 5 : cloud cert password
+## param 6 : system cert path !!! with / ending !!!
+## param 7 : system name for new cert
+## param 8 : password for new cert
+## param 9 : actual addressable ap address
+
+## example :
+##  sh makesystemcert.sh master.crt arrowhead.eu testcloud2.p12 testcloud2.aitia.arrowhead.eu 123456 newsystem abc123 192.144.56.1

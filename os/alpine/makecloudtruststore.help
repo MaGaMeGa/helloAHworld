@@ -1,0 +1,1 @@
+sh  makecloudtruststore.sh /tmp/c /tmp/c testcloud3 testcloud3.aitia 123456 relayx1_1.truststore 123456 /tmp/c relay-masterx1 relay-masterx1
