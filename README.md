@@ -1,3 +1,6 @@
+update: 
+links to the current beta version of the pre-configured intercloud vbox machine [here](https://github.com/MaGaMeGa/helloAHworld/blob/development/os/docs/intercloud_machine_v_beta.01.links.txt)
+
 --- in progress / poc scripts --- 
 
 # Simple Arrowhead Framework example
