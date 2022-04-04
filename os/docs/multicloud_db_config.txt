@@ -1,0 +1,6 @@
+if "java.sql.SQLException: Too many connections" appears in logs
+add:
+max_connections = 512
+
+under [mariadb] tag
+at /etc/my.cnf.d/mariadb-server.cnf
